@@ -1,0 +1,20 @@
+<%- include('../../partials/header') %>
+
+<div class="bg-white p-8 rounded-lg shadow-lg">
+    <h1 class="text-3xl font-bold text-center mb-2 text-gray-800">Güvenli Ödeme Ekranı</h1>
+    <p class="text-center text-gray-600 mb-8">Lütfen ödeme bilgilerinizi aşağıdaki forma giriniz. Bu işlem PayTR güvencesiyle gerçekleştirilmektedir.</p>
+
+    <div class="w-full max-w-2xl mx-auto">
+        <!-- PAYTR IFRAME BAŞLANGIÇ -->
+        <script src="https://www.paytr.com/js/iframeResizer.min.js"></script>
+        <iframe src="https://www.paytr.com/odeme/guvenli/<%= data.paytrToken %>" id="paytriframe" frameborder="0" scrolling="no" style="width: 100%;"></iframe>
+        <script>iFrameResize({},'#paytriframe');</script>
+        <!-- PAYTR IFRAME BİTİŞ -->
+    </div>
+    
+    <div class="text-center mt-8">
+        <p class="text-sm text-gray-500">Ödeme ile ilgili bir sorun mu yaşıyorsunuz? <a href="/destek" class="text-red-500 hover:underline">Destek ekibimizle iletişime geçin.</a></p>
+    </div>
+</div>
+
+<%- include('../../partials/footer') %> 

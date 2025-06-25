@@ -1,0 +1,72 @@
+<%- include('../../partials/header') %>
+
+    <div class="bg-brand-dark p-8  shadow-lg">
+        <h1 class="text-3xl font-bold mb-6 text-brand-red border-b pb-4">Sıkça Sorulan Sorular</h1>
+
+        <div class="space-y-4">
+            <!-- Soru 1 -->
+            <div class="border-b">
+                <button class="w-full text-left py-4 focus:outline-none">
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-semibold text-white">Üyelik ücretli mi?</span>
+                        <span class="text-red-500 transform transition-transform duration-300">-</span>
+                    </div>
+                </button>
+                <div class="pb-4 text-white">
+                    <p>Hayır, sitemize üye olmak tamamen ücretsizdir. Sadece satın aldığınız ürün ve hizmetler için
+                        ödeme yaparsınız.</p>
+                </div>
+            </div>
+
+            <!-- Soru 2 -->
+            <div class="border-b">
+                <button class="w-full text-left py-4 focus:outline-none">
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-semibold text-white">Ödeme yöntemleri nelerdir?</span>
+                        <span class="text-gray-500 transform transition-transform duration-300">+</span>
+                    </div>
+                </button>
+                <div class="pb-4 text-white hidden">
+                    <p>Kredi kartı, banka kartı ve diğer online ödeme yöntemlerini kullanarak güvenli bir şekilde ödeme
+                        yapabilirsiniz. Ödeme altyapısı olarak PayTR kullanılmaktadır.</p>
+                </div>
+            </div>
+
+            <!-- Soru 3 -->
+            <div class="border-b">
+                <button class="w-full text-left py-4 focus:outline-none">
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-semibold text-white">Destek talebi nasıl oluşturabilirim?</span>
+                        <span class="text-white transform transition-transform duration-300">+</span>
+                    </div>
+                </button>
+                <div class="pb-4 text-white hidden">
+                    <p>Kullanıcı panelinizde bulunan "Destek" bölümünden yeni bir destek talebi oluşturabilir veya
+                        mevcut taleplerinizin durumunu kontrol edebilirsiniz.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.border-b button').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('span:last-child');
+
+                if (answer.classList.contains('hidden')) {
+                    answer.classList.remove('hidden');
+                    icon.textContent = '-';
+                    icon.classList.add('text-red-500');
+                    icon.classList.remove('text-gray-500');
+                } else {
+                    answer.classList.add('hidden');
+                    icon.textContent = '+';
+                    icon.classList.add('text-gray-500');
+                    icon.classList.remove('text-red-500');
+                }
+            });
+        });
+    </script>
+
+    <%- include('../../partials/footer') %>

@@ -1,0 +1,26 @@
+<%- include('../../partials/admin-header') %>
+
+<h1 class="text-3xl font-bold text-gray-800 mb-6">Gösterge Paneli</h1>
+
+<!-- İstatistikler -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold text-gray-700">Toplam Kullanıcı</h3>
+        <p class="text-4xl font-bold text-brand-red mt-2"><%= data.stats.userCount %></p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold text-gray-700">Toplam Ürün</h3>
+        <p class="text-4xl font-bold text-brand-red mt-2"><%= data.stats.productCount %></p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold text-gray-700">Aktif Biletler</h3>
+        <p class="text-4xl font-bold text-brand-red mt-2"><%= data.stats.ticketCount %></p>
+    </div>
+
+</div>
+
+<!-- Buraya daha fazla panel bileşeni eklenebilir -->
+
+
+<%- include('../../partials/admin-footer') %> 

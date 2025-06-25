@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= data.pageTitle || 'Admin Paneli' %> | Proje Adı</title>
+    <link rel="stylesheet" href="/styles/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-gray-100">
+
+<div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
+    <!-- Sidebar -->
+    <aside 
+        :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
+        class="fixed inset-y-0 left-0 z-30 w-64 px-4 py-7 overflow-y-auto bg-gray-800 text-white transition duration-300 ease-in-out transform lg:translate-x-0 lg:static lg:inset-0">
+        
+        <a href="/admin" class="flex items-center px-4">
+            <i class="fas fa-user-shield text-2xl text-brand-red"></i>
+            <span class="ml-3 text-2xl font-bold">Admin Paneli</span>
+        </a>
+
+        <nav class="mt-10">
+            <a href="/admin" class="flex items-center px-4 py-2 mt-5 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">
+                <i class="fas fa-tachometer-alt"></i>
+                <span class="ml-3">Gösterge Paneli</span>
+            </a>
+            <a href="/admin/kullanicilar" class="flex items-center px-4 py-2 mt-5 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">
+                <i class="fas fa-users"></i>
+                <span class="ml-3">Kullanıcılar</span>
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 mt-5 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">
+                <i class="fas fa-box-open"></i>
+                <span class="ml-3">Ürünler</span>
+            </a>
+            <a href="#" class="flex items-center px-4 py-2 mt-5 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">
+                <i class="fas fa-life-ring"></i>
+                <span class="ml-3">Destek Biletleri</span>
+            </a>
+             <a href="/" class="flex items-center px-4 py-2 mt-10 text-gray-400 hover:bg-gray-700 hover:text-white rounded-md border-t border-gray-700 pt-4">
+                <i class="fas fa-globe"></i>
+                <span class="ml-3">Siteyi Görüntüle</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+        <!-- Top bar -->
+        <header class="flex justify-between items-center p-6 bg-white border-b-2 border-gray-200">
+            <div>
+                <!-- Hamburger button -->
+                <button @click="sidebarOpen = !sidebarOpen" class="text-gray-500 focus:outline-none lg:hidden">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex items-center">
+                 <span class="mr-4">Hoş geldin, <%= user.firstName %></span>
+                 <a href="/cikis" class="text-red-500 hover:text-red-700">
+                    <i class="fas fa-sign-out-alt text-xl"></i>
+                 </a>
+            </div>
+        </header>
+
+        <!-- Page content -->
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6">
+            <div class="container mx-auto"> 

@@ -1,0 +1,43 @@
+<%- include('../../partials/admin-header') %>
+
+<h1 class="text-3xl font-bold text-gray-800 mb-6">Kullanıcı Yönetimi</h1>
+
+<div class="bg-white p-6 rounded-lg shadow-md">
+    <div class="overflow-x-auto">
+        <table class="min-w-full bg-white">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">ID</th>
+                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Ad Soyad</th>
+                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">E-posta</th>
+                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Rol</th>
+                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-700">
+                <% data.users.forEach(user => { %>
+                    <tr class="border-b hover:bg-gray-100">
+                        <td class="py-3 px-4 font-mono text-xs"><%= user.id %></td>
+                        <td class="py-3 px-4"><%= user.firstName %> <%= user.lastName %></td>
+                        <td class="py-3 px-4"><%= user.email %></td>
+                        <td class="py-3 px-4">
+                            <% if (user.isAdmin) { %>
+                                <span class="bg-yellow-200 text-yellow-800 py-1 px-3 rounded-full text-xs font-semibold">Admin</span>
+                            <% } else { %>
+                                <span class="bg-blue-200 text-blue-800 py-1 px-3 rounded-full text-xs font-semibold">Kullanıcı</span>
+                            <% } %>
+                        </td>
+                        <td class="py-3 px-4">
+                            <button class="btn btn-secondary group text-xs font-bold py-2 px-3 rounded">
+                                 <span class="bg-overlay"></span><span class="border-anim top"></span><span class="border-anim bottom"></span><span class="border-anim left"></span><span class="border-anim right"></span>
+                                <span class="text-content"><i class="fas fa-pencil-alt mr-1"></i> Yönet</span>
+                            </button>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<%- include('../../partials/admin-footer') %> 

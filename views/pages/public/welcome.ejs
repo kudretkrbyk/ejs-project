@@ -1,0 +1,143 @@
+<%- include('../../partials/header') %>
+
+    <div class="">
+
+        <!-- Hero Section -->
+        <section class="relative w-full min-h-screen flex items-center justify-center text-white"
+            style="background-image: url('/images/hero-bg.png'); background-size: cover; background-position: center;">
+            <!-- Animasyonlu Shape'ler Başlangıç -->
+         
+            <!-- Koyu overlay: Okunabilirlik için -->
+            <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+            <div class="container  px-10 md:px-0 text-center0 relative flex w-full">
+                <div data-aos="fade-up" class="px-10 z-30">
+                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                        Verinin Gücünü Serbest Bırakın
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-8 drop-shadow">
+                        Yeni nesil altyapımızla veritabanı işlemlerinizi hızlandırın, güvenliği en üst düzeye çıkarın ve
+                        iş akışlarınızı kesintisiz hale getirin.
+                    </p>
+                    <a href="/urunler"
+                        class="btn btn-primary group bg-brand-red text-white font-bold py-4 px-10 text-lg shadow-lg hover:bg-red-700 transition">
+                        <span class="bg-overlay"></span>
+                        <span class="border-anim top"></span><span class="border-anim bottom"></span><span
+                            class="border-anim left"></span><span class="border-anim right"></span>
+                        <span class="text-content">Keşfetmeye Başla</span>
+                    </a>
+                </div>
+                <div  class="w-full h-full  flex items-center justify-center relative">
+                    <div id="lottie" class=""></div>
+                    
+                  
+                </div>
+            </div>
+            <div class="absolute inset-0 bg-black bg-opacity-40 z-20"></div>
+        </section>
+
+        <style>
+        /* Blob animasyonları için custom keyframes */
+        @keyframes blob1 {
+            0%, 100% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -20px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+        @keyframes blob2 {
+            0%, 100% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(40px, 30px) scale(1.08); }
+        }
+        @keyframes blob3 {
+            0%, 100% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(-30px, -30px) scale(1.12); }
+        }
+        .animate-blob1 { animation: blob1 12s infinite ease-in-out; }
+        .animate-blob2 { animation: blob2 14s infinite ease-in-out; }
+        .animate-blob3 { animation: blob3 16s infinite ease-in-out; }
+        </style>
+
+        <!--Özelliklerimiz Bölümü -->
+        <section class="py-20 px-10 bg-brand-dark w-full">
+            <div class="container mx-auto px-6 md:px-0">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 text-center text-white">
+                    <div data-aos="fade-up" data-aos-delay="100" class="space-y-2">
+                        <i class="fas fa-rocket text-4xl text-brand-red mb-3"></i>
+                        <h3 class="text-xl font-bold">Işık Hızında</h3>
+                        <p class="text-gray-400">NVMe disklerle inanılmaz okuma/yazma hızları.</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200" class="space-y-2">
+                        <i class="fas fa-user-shield text-4xl text-brand-red mb-3"></i>
+                        <h3 class="text-xl font-bold">DDoS Koruması</h3>
+                        <p class="text-gray-400">Katman 7 koruma ile saldırılara karşı güvende.</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="300" class="space-y-2">
+                        <i class="fas fa-headset text-4xl text-brand-red mb-3"></i>
+                        <h3 class="text-xl font-bold">Uzman Destek</h3>
+                        <p class="text-gray-400">7/24 yanınızda olan profesyonel ekip.</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="400" class="space-y-2">
+                        <i class="fas fa-server text-4xl text-brand-red mb-3"></i>
+                        <h3 class="text-xl font-bold">99.9% Uptime</h3>
+                        <p class="text-gray-400">Kesintisiz ve güvenilir erişim garantisi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 adımda kolay kurulum -->
+        <section class="py-24 px-10 bg-gray-900 text-white">
+            <div class="container mx-auto px-6 md:px-0">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">3 Adımda Kolay Kurulum
+                </h2>
+                <div class="relative">
+
+                    <div class="grid md:grid-cols-3 gap-16 text-center relative">
+                        <div data-aos="fade-right" class="space-y-4">
+                            <div
+                                class="bg-gray-800 border-2 border-brand-red w-20 h-20 rounded-full mx-auto flex items-center justify-center text-3xl font-bold mb-4">
+                                1</div>
+                            <h3 class="text-2xl font-semibold">Paketini Seç</h3>
+                            <p class="text-gray-400">İhtiyaçlarınıza en uygun veritabanı paketini seçin.</p>
+                        </div>
+                        <div data-aos="fade-up" class="space-y-4">
+                            <div
+                                class="bg-brand-dark-100 border-2 border-brand-red w-20 h-20 rounded-full mx-auto flex items-center justify-center text-3xl font-bold mb-4">
+                                2</div>
+                            <h3 class="text-2xl font-semibold">Anında Kurulum</h3>
+                            <p class="text-gray-400">Siparişiniz sonrası hizmetiniz saniyeler içinde aktifleşir.</p>
+                        </div>
+                        <div data-aos="fade-left" class="space-y-4">
+                            <div
+                                class="bg-gray-800 border-2 border-brand-red w-20 h-20 rounded-full mx-auto flex items-center justify-center text-3xl font-bold mb-4">
+                                3</div>
+                            <h3 class="text-2xl font-semibold">Yönetmeye Başla</h3>
+                            <p class="text-gray-400">Kullanıcı dostu panelden hizmetinizi kolayca yönetin.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular hizmetlerimiz -->
+        <div class="py-10 px-10 bg-brand-dark">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white " data-aos="fade-up">
+                En Popüler Hizmetlerimiz
+            </h2>
+            <%- include("../../partials/urun-hizmetler") %>
+        </div>
+
+
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          lottie.loadAnimation({
+            container: document.getElementById('lottie'), // Div'in id'si
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '/assets/AnimationHero.json' // JSON dosyanın yolu
+          });
+        });
+      </script>
+      
+
+    <%- include("../../partials/footer") %>

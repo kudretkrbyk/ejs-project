@@ -1,0 +1,72 @@
+<%- include('../../partials/header') %>
+
+<div class="space-y-8">
+    
+    <!-- Başlık -->
+    <h1 class="text-3xl font-bold text-gray-800"><%= data.product.name %> - Kontrol Paneli</h1>
+
+    <!-- Üst Kontrol Paneli Bölümü -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+        <!-- Sol Bilgi Kutusu -->
+        <div class="lg:col-span-1 md:col-span-1 bg-gray-700 text-white rounded-lg shadow-lg p-6">
+            <h2 class="text-lg font-semibold mb-4 border-b border-gray-600 pb-2">Bağlantı Bilgileri</h2>
+            <div class="space-y-4">
+                <div class="flex justify-between">
+                    <span class="font-bold">İP ADRES</span>
+                    <span>192.168.1.10</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="font-bold">PORT</span>
+                    <span>3306</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="font-bold">STATUS</span>
+                    <span class="text-green-400 font-semibold">Aktif</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orta Disk Kullanım Kutusu -->
+        <div class="lg:col-span-2 md:col-span-2 bg-gray-700 text-white rounded-lg shadow-lg p-6 flex items-center space-x-6">
+            <div class="relative w-24 h-24">
+                <svg class="w-full h-full" viewBox="0 0 36 36">
+                    <path class="text-gray-600" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+                    <path class="text-green-500" stroke-dasharray="45, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3" stroke-linecap="round"></path>
+                </svg>
+                 <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                    <span class="text-xl font-bold">45%</span>
+                </div>
+            </div>
+            <div class="flex-grow">
+                <h3 class="text-lg font-semibold">Kaynak Kullanımı</h3>
+                <p class="text-gray-400">Disk: 4.5GB / 10GB</p>
+                <p class="text-gray-400">CPU: 15%</p>
+            </div>
+        </div>
+
+        <!-- Sağ Butonlar -->
+        <div class="lg:col-span-1 md:col-span-3 flex flex-col space-y-4">
+            <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-4 rounded-lg shadow">
+                Yeniden Başlat
+            </button>
+            <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-4 rounded-lg shadow">
+                Konsol
+            </button>
+            <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg shadow">
+                Durdur
+            </button>
+        </div>
+    </div>
+
+    <!-- Alt İçerik Alanı -->
+    <div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Ürün Yönetimi</h2>
+        <div class="bg-gray-200 rounded-lg shadow-lg p-6 min-h-[200px]">
+            <p>Burada ürüne özel ayarlar veya ek bilgiler yer alabilir.</p>
+        </div>
+    </div>
+
+</div>
+
+<%- include('../../partials/footer') %> 

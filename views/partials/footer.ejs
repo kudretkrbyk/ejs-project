@@ -1,0 +1,63 @@
+</main>
+
+<footer class="bg-brand-dark text-white">
+    <div class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- Hakkımızda Bölümü -->
+            <div class="col-span-2 md:col-span-1">
+                <h3 class="text-xl font-bold mb-4">Proje Adı</h3>
+                <p class="text-gray-400">
+                    Yüksek performanslı ve güvenilir veritabanı çözümleri sunarak işinizi geleceğe taşıyoruz.
+                </p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="text-gray-400 hover:text-brand-red"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-brand-red"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-brand-red"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-brand-red"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <!-- Hizmetler Bölümü -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Hizmetler</h3>
+                <ul class="space-y-2">
+                    <li><a href="/urunler" class="text-gray-400 hover:text-brand-red">Veritabanı Paketleri</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-brand-red">Özel Çözümler</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-brand-red">Yedekleme</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-brand-red">Güvenlik</a></li>
+                </ul>
+            </div>
+            <!-- Şirket Bölümü -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Şirket</h3>
+                <ul class="space-y-2">
+                    <li><a href="/biz-kimiz" class="text-gray-400 hover:text-brand-red">Hakkımızda</a></li>
+                    <li><a href="/bilgi-bankasi" class="text-gray-400 hover:text-brand-red">Bilgi Bankası</a></li>
+                    <li><a href="/sss" class="text-gray-400 hover:text-brand-red">S.S.S.</a></li>
+                </ul>
+            </div>
+            <!-- Yasal Bölümü -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Yasal</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-brand-red">Hizmet Sözleşmesi</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-brand-red">Gizlilik Politikası</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
+            <p>&copy; <%= new Date().getFullYear() %> Proje Adı. Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 750, // animasyon süresi
+        once: true, // animasyonlar sadece bir kez çalışsın
+    });
+</script>
+<script src="/js/main.js"></script>
+</body>
+
+</html>
