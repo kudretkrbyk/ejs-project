@@ -337,12 +337,12 @@ app.get("/sepet/kaldir/:id", isAuthenticated, (req, res) => {
 // --- GENEL (PUBLIC) SAYFA ROTALARI ---
 
 // Ürünler sayfası
-app.get("/urunler", (req, res) => {
+app.get("/cozumlerimiz", (req, res) => {
   const data = {
-    pageTitle: "Ürünlerimiz",
+    pageTitle: "Çözümlerimiz",
     products: products,
   };
-  res.render("pages/public/urunler", { data });
+  res.render("pages/public/cozumlerimiz", { data });
 });
 
 // Ana sayfa rotası
@@ -394,6 +394,7 @@ app.get("/iletisim", (req, res) => {
   const data = { pageTitle: "Hakkımızda" };
   res.render("pages/public/iletisim", data);
 });
+
 app.listen(port, () => {
   console.log(`Sunucu http://localhost:${port} adresinde çalışıyor`);
 });
