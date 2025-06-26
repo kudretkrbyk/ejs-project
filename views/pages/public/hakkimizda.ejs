@@ -1,39 +1,56 @@
 <%- include('../../partials/header') %>
 
-<main class="min-h-screen w-full flex items-center justify-center bg-brand-dark py-12 px-4">
-  <div class="w-full max-w-2xl bg-brand-dark rounded-xl  ">
-    <h1 class="text-3xl font-bold text-white mb-4 text-center">Hakkımızda</h1>
-    <p class="text-lg text-gray-300 mb-6 text-center">
-      DataBen olarak, verinin gücüne inanıyor ve müşterilerimize yenilikçi, güvenilir ve erişilebilir veri çözümleri sunuyoruz. Kuruluşumuzdan bu yana, bireylerin ve kurumların dijital dünyada daha etkin ve verimli olmalarını sağlamak için çalışıyoruz.
-    </p>
-    <div class="space-y-4">
-      <section>
-        <h2 class="text-xl font-semibold text-brand-red mb-2">Misyonumuz</h2>
-        <p class="text-gray-200">
-          Müşterilerimizin dijital dönüşüm yolculuğunda en güvenilir iş ortağı olmak; veri yönetimi, güvenliği ve analizinde en iyi çözümleri sunmak.
-        </p>
-      </section>
-      <section>
-        <h2 class="text-xl font-semibold text-brand-red mb-2">Vizyonumuz</h2>
-        <p class="text-gray-200">
-          Türkiye'nin ve dünyanın önde gelen veri teknolojileri şirketlerinden biri olmak, inovasyon ve müşteri memnuniyetinde öncü rol üstlenmek.
-        </p>
-      </section>
-      <section>
-        <h2 class="text-xl font-semibold text-brand-red mb-2">Değerlerimiz</h2>
-        <ul class="list-disc list-inside text-gray-300">
-          <li>Güvenilirlik ve şeffaflık</li>
-          <li>Yenilikçilik ve sürekli gelişim</li>
-          <li>Müşteri odaklılık</li>
-          <li>Takım çalışması ve iş birliği</li>
-          <li>Veri güvenliği ve gizliliği</li>
-        </ul>
-      </section>
-    </div>
-    <div class="mt-8 text-center">
-      <a href="/iletisim" class="inline-block px-6 py-2 bg-brand-red text-white rounded-md font-semibold shadow hover:bg-red-700 transition">Bize Ulaşın</a>
-    </div>
-  </div>
-</main>
+  <main class="min-h-screen w-full flex items-center justify-center bg-brand-dark py-1 px-4">
+    <div class="w-full flex flex-col items-center justify-center gap-4 max-w-4xl bg-brand-dark rounded-xl">
+      <!-- Üst Bilgi Alanı -->
+      <section class="text-center flex flex-col items-center justify-center gap-4" data-aos="fade-up"
+        data-aos-duration="800">
 
-<%- include('../../partials/footer') %> 
+        <h1 class="text-3xl md:text-4xl font-bold text-white my-2">??? Veri tabanı nedir?</h1>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIGENDI VOLUPTATES
+          VOLUPTAS, CULPA DUCIMUS VOLUPTATUM EXPLICABO
+          VOLUPTAS, CULPA DUCIMUS VOLUPTATUM EX
+        </p>
+        <a href="/urunler"
+          class="btn btn-primary group bg-brand-red text-white font-bold py-4 px-10 text-lg shadow-lg hover:bg-red-700 transition">
+          <span class="bg-overlay"></span>
+          <span class="border-anim top"></span><span class="border-anim bottom"></span><span
+            class="border-anim left"></span><span class="border-anim right"></span>
+          <span class="text-content">Veri Tabanları</span>
+        </a>
+
+      </section>
+
+      <!-- Kartlar -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" data-aos="fade-up" data-aos-duration="800">
+        <% const cards=[ { title: "Başlık" ,
+          desc: "Maecenas sit pretium, cras in. In quisque sem id eget. In vel gravida ut adipiscing integer felis. Id ac non arcu facilisi proin ultrices sed."
+          }, { title: "Başlık" ,
+          desc: "Maecenas sit pretium, cras in. In quisque sem id eget. In vel gravida ut adipiscing integer felis. Id ac non arcu facilisi proin ultrices sed."
+          }, { title: "Başlık" ,
+          desc: "Maecenas sit pretium, cras in. In quisque sem id eget. In vel gravida ut adipiscing integer felis. Id ac non arcu facilisi proin ultrices sed."
+          }, { title: "Başlık" ,
+          desc: "Maecenas sit pretium, cras in. In quisque sem id eget. In vel gravida ut adipiscing integer felis. Id ac non arcu facilisi proin ultrices sed."
+          } ]; %>
+
+          <% cards.forEach((item)=> { %>
+            <div class="relative group  transition-all duration-700">
+
+
+              <!-- İçerik -->
+              <div class="relative z-20 p-6 rounded-lg bg-white/5 transition-colors">
+                <div class="text-xl font-bold text-white mb-3">
+                  <%= item.title %>
+                </div>
+                <p class="text-gray-400 leading-relaxed">
+                  <%= item.desc %>
+                </p>
+              </div>
+            </div>
+            <% }) %>
+      </section>
+    </div>
+  </main>
+
+  <%- include('../../partials/footer') %>
