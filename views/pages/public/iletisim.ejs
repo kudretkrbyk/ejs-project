@@ -1,106 +1,93 @@
 <%- include('../../partials/header') %>
 
   <main class="min-h-screen w-full overflow-hidden relative md:p-12 p-2 bg-gray-900 font-chakra">
-    <!-- Arka Plan Görseli (isteğe bağlı) -->
-    <!--
-  <img
-    class="absolute w-full h-full left-0 right-0 bottom-0 object-cover object-center opacity-40 pointer-events-none"
-    src="/images/contactShape.png"
-    alt="Contact Shape"
-  />
-  -->
-
     <section class="text-white font-chakra relative z-10">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col xl:flex-row gap-12">
-          <!-- İletişim Formu -->
-          <div class="xl:w-5/12 w-full" data-aos="fade-right" data-aos-duration="800">
-            <div class="mb-6">
-              <h4 class="text-2xl font-bold uppercase mb-4">Bir sorunuz mu var?</h4>
-              <p class="text-gray-300 max-w-md">
-                Formu doldurun, ekibimiz en kısa sürede size dönüş yapacaktır.
-              </p>
-            </div>
-            <form action="/iletisim" method="POST" class="space-y-1">
-              <!-- Ad Soyad -->
-              <div>
-                <label for="FormFullName" class="block text-sm font-medium text-gray-200 mb-1">Ad Soyad</label>
-                <input type="text" id="FormFullName" name="FormFullName" required maxlength="100"
-                  placeholder="Adınızı ve soyadınızı girin"
-                  class="w-full px-4 py-2 border border-gray-600 bg-gray-900 text-gray-100 rounded-md  transition placeholder-gray-500" />
-              </div>
-              <!-- Telefon -->
-              <div>
-                <label for="FormNumber" class="block text-sm font-medium text-gray-200 mb-1">Telefon</label>
-                <input type="tel" id="FormNumber" name="FormNumber" required maxlength="20" pattern="^[0-9\s\-\+\(\)]*$"
-                  placeholder="Telefon numaranız"
-                  class="w-full px-4 py-2 border border-gray-600 bg-gray-900 text-gray-100 rounded-md  transition placeholder-gray-500" />
-              </div>
-              <!-- Mail -->
-              <div>
-                <label for="FormMail" class="block text-sm font-medium text-gray-200 mb-1">E-posta</label>
-                <input type="email" id="FormMail" name="FormMail" required maxlength="100"
-                  placeholder="E-posta adresiniz"
-                  class="w-full px-4 py-2 border border-gray-600 bg-gray-900 text-gray-100 rounded-md  transition placeholder-gray-500" />
-              </div>
-              <!-- Mesaj -->
-              <div>
-                <label for="FormText" class="block text-sm font-medium text-gray-200 mb-1">Mesajınız</label>
-                <textarea id="FormText" name="FormText" required maxlength="1000" rows="5"
-                  placeholder="Mesajınızı yazın"
-                  class="w-full px-4 py-2 border border-gray-600 bg-gray-900 text-gray-100 rounded-md  transition resize-none placeholder-gray-500"></textarea>
-              </div>
-              <!-- Gönder Butonu -->
-              <div>
-                <button type="submit"
-                  class="btn btn-primary group w-full font-bold py-3 px-4  shadow-lg  text-white text-lg relative overflow-hidden">
-                  <span class="bg-overlay"></span>
-                  <span class="border-anim top"></span><span class="border-anim bottom"></span><span
-                    class="border-anim left"></span><span class="border-anim right"></span>
-                  <span class="text-content">Giriş Yap</span>
-                </button>
-              </div>
-            </form>
-            <% if (typeof message !=='undefined' ) { %>
-              <div class="mt-4 text-center text-sm text-red-400">
-                <%= message %>
-              </div>
-              <% } %>
+      <div class="container mx-auto px-4 space-y-24">
+
+        <!-- ÜST ALAN -->
+        <div class="flex items-start justify-center gap-10" data-aos="fade-up" data-aos-duration="800">
+
+          <!-- Şirket Bilgileri -->
+          <div class="space-y-4">
+            <h4 class="text-2xl font-bold text-brand-red">İletişim Bilgileri</h4>
+            <ul class="text-gray-300 text-base space-y-2 leading-relaxed">
+              <li><strong>Şirket:</strong> Lorem Web Hizmetleri A.Ş.</li>
+              <li><strong>Telefon:</strong> +90 553 534 25 34</li>
+              <li><strong>E-posta:</strong> info@lorem.com</li>
+              <li><strong>Adres:</strong> İzmit / Kocaeli</li>
+            </ul>
+          </div>
+          <!-- Sosyal Medya -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-white">
+            <a href="#" class="hover:text-brand-red transition">LinkedIn</a>
+            <a href="#" class="hover:text-brand-red transition">Instagram</a>
+            <a href="#" class="hover:text-brand-red transition">Twitter</a>
+            <a href="#" class="hover:text-brand-red transition">Facebook</a>
           </div>
 
-          <!-- İletişim Bilgileri -->
-          <div class="xl:w-7/12 w-full" data-aos="fade-left" data-aos-duration="800">
-            <div class="xl:pl-36">
-              <div class="mb-10 flex flex-col md:flex-row gap-8">
-                <div class="w-full md:w-1/2">
-                  <h6 class="text-xl font-semibold mb-2">Adres</h6>
-                  <ul class="text-gray-300">
-                    <li>A???</li>
-                  </ul>
-                </div>
-                <div class="w-full md:w-1/2">
-                  <h6 class="text-xl font-semibold mb-2">Bize Ulaşın</h6>
-                  <ul class="text-gray-300">
-                    <li>+90 ???</li>
-                    <li>info@??.net</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="mb-10">
-                <h6 class="text-xl font-semibold mb-2">Kurumsal Bilgiler</h6>
-                <ul class="text-gray-300 text-sm space-y-1">
-                  <li>Kep Adresi: ???</li>
-                  <li>Unvan: ???İ</li>
-                  <li>Vergi No: ??</li>
-                  <li>Mersis No: ??</li>
-                  <li>Vergi Dairesi: ?? V.D.</li>
-                  <li>Meslek Odası: ?? Ticaret Odası.</li>
-                </ul>
-              </div>
-              <!-- Harita eklemek isterseniz buraya iframe koyabilirsiniz -->
-            </div>
+          <!-- Harita  -->
+          <div class="md:col-span-2 flex flex-col gap-6">
+            <iframe class="rounded-md shadow-md"
+              src="https://maps.google.com/maps?q=Kocaeli&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="220"
+              style="border:0;" allowfullscreen loading="lazy"></iframe>
+
+
           </div>
+
         </div>
+
+        <!-- FORM ALANI -->
+        <div class="bg-gray-800 rounded-xl p-10 shadow-xl max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="800">
+          <h4 class="text-3xl font-bold mb-6 text-center">İletişim Formu</h4>
+          <form action="/iletisim" method="POST" class="grid gap-6 md:grid-cols-2">
+
+            <div class="col-span-2 md:col-span-1">
+              <label class="block mb-2 text-sm font-medium text-gray-300">Ad Soyad</label>
+              <input type="text" name="FormFullName"
+                class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-brand-red transition"
+                required />
+            </div>
+
+            <div class="col-span-2 md:col-span-1">
+              <label class="block mb-2 text-sm font-medium text-gray-300">Telefon</label>
+              <input type="tel" name="FormNumber"
+                class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-brand-red transition"
+                required />
+            </div>
+
+            <div class="col-span-2">
+              <label class="block mb-2 text-sm font-medium text-gray-300">E-posta</label>
+              <input type="email" name="FormMail"
+                class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-brand-red transition"
+                required />
+            </div>
+
+            <div class="col-span-2">
+              <label class="block mb-2 text-sm font-medium text-gray-300">Mesaj</label>
+              <textarea name="FormText" rows="5"
+                class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-brand-red resize-none transition"
+                required></textarea>
+            </div>
+
+            <div class="col-span-2">
+              <!-- EFEKTİLİ BUTON -->
+              <button type="submit"
+                class="btn btn-primary group bg-brand-red text-white font-bold py-4 px-10 text-lg shadow-lg hover:bg-red-700 transition relative overflow-hidden w-full">
+                <span class="bg-overlay"></span>
+                <span class="border-anim top"></span><span class="border-anim bottom"></span>
+                <span class="border-anim left"></span><span class="border-anim right"></span>
+                <span class="text-content">Mesaj Gönder</span>
+              </button>
+            </div>
+          </form>
+
+          <% if (typeof message !=='undefined' ) { %>
+            <div class="mt-6 text-center text-sm text-green-400 font-medium">
+              <%= message %>
+            </div>
+            <% } %>
+        </div>
+
       </div>
     </section>
   </main>
