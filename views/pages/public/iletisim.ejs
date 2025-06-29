@@ -1,11 +1,12 @@
 <%- include('../../partials/header') %>
 
-  <main class="min-h-screen w-full overflow-hidden relative md:p-12 p-2 bg-gray-900 font-chakra">
+  <main class="min-h-screen w-full overflow-hidden relative md:p-12 p-2 bg-brand-dark-100 font-chakra">
     <section class="text-white font-chakra relative z-10">
       <div class="container mx-auto px-4 space-y-24">
 
         <!-- ÜST ALAN -->
-        <div class="flex items-start justify-center gap-10" data-aos="fade-up" data-aos-duration="800">
+        <div class=" flex flex-col md:flex-row  items-start justify-center gap-10" data-aos="fade-up"
+          data-aos-duration="800">
 
           <!-- Şirket Bilgileri -->
           <div class="space-y-4">
@@ -37,45 +38,46 @@
         </div>
 
         <!-- FORM ALANI -->
-        <div class="bg-gray-800 rounded-xl p-10 shadow-xl max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="800">
+        <div class="bg-brand-dark rounded-xl p-10 shadow-xl max-w-4xl mx-auto" data-aos="fade-up"
+          data-aos-duration="800">
           <h4 class="text-3xl font-bold mb-6 text-center">İletişim Formu</h4>
           <form action="/iletisim" method="POST" class="grid gap-6 md:grid-cols-2">
 
             <div class="col-span-2 md:col-span-1">
               <label class="block mb-2 text-sm font-medium text-gray-300">Ad Soyad</label>
               <input type="text" name="FormFullName"
-                class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-brand-red transition"
+                class="w-full p-3 rounded bg-brand-dark-100 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-brand-red transition"
                 required />
             </div>
 
             <div class="col-span-2 md:col-span-1">
               <label class="block mb-2 text-sm font-medium text-gray-300">Telefon</label>
               <input type="tel" name="FormNumber"
-                class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-brand-red transition"
+                class="w-full p-3 rounded bg-brand-dark-100 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-brand-red transition"
                 required />
             </div>
 
             <div class="col-span-2">
               <label class="block mb-2 text-sm font-medium text-gray-300">E-posta</label>
               <input type="email" name="FormMail"
-                class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-brand-red transition"
+                class="w-full p-3 rounded bg-brand-dark-100 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-brand-red transition"
                 required />
             </div>
 
             <div class="col-span-2">
               <label class="block mb-2 text-sm font-medium text-gray-300">Mesaj</label>
               <textarea name="FormText" rows="5"
-                class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-brand-red resize-none transition"
+                class="w-full p-3 rounded bg-brand-dark-100 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-brand-red resize-none transition"
                 required></textarea>
             </div>
 
             <div class="col-span-2">
               <!-- EFEKTİLİ BUTON -->
               <button type="submit"
-                class="btn btn-primary group bg-brand-red text-white font-bold py-4 px-10 text-lg shadow-lg hover:bg-red-700 transition relative overflow-hidden w-full">
+                class="btn btn-primary group bg-brand-red mt-auto text-white font-bold py-4  text-lg  hover:bg-red-700 transition relative overflow-hidden w-full">
                 <span class="bg-overlay"></span>
-                <span class="border-anim top"></span><span class="border-anim bottom"></span>
-                <span class="border-anim left"></span><span class="border-anim right"></span>
+                <span class="border-anim top"></span><span class="border-anim bottom"></span><span
+                  class="border-anim left"></span><span class="border-anim right"></span>
                 <span class="text-content">Mesaj Gönder</span>
               </button>
             </div>

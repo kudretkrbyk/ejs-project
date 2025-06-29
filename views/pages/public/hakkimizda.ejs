@@ -23,7 +23,7 @@
       </section>
 
       <!-- Kartlar -->
-      <section class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" data-aos="fade-up" data-aos-duration="800">
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 " data-aos="fade-up" data-aos-duration="800">
         <% const cards=[ { title: "Başlık" ,
           desc: "Maecenas sit pretium, cras in. In quisque sem id eget. In vel gravida ut adipiscing integer felis. Id ac non arcu facilisi proin ultrices sed."
           }, { title: "Başlık" ,
@@ -35,11 +35,11 @@
           } ]; %>
 
           <% cards.forEach((item)=> { %>
-            <div class="relative group  transition-all duration-700">
+            <div class="relative group bg-brand-dark-100 transition-all duration-700">
 
 
               <!-- İçerik -->
-              <div class="relative z-20 p-6 rounded-lg bg-white/5 transition-colors">
+              <div class="relative z-20 p-6 rounded-lg  transition-colors">
                 <div class="text-xl font-bold text-white mb-3">
                   <%= item.title %>
                 </div>

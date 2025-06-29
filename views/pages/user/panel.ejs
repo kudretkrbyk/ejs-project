@@ -1,47 +1,26 @@
 <%- include('../../partials/header') %>
 
-    <div class="bg-gray-900 p-8  shadow-lg">
+    <div class="bg-brand-dark-100 p-8 ">
         <h1 class="text-3xl font-bold mb-2 text-white">Hoş Geldin, <%= user.firstName %>!</h1>
-        <p class="text-white mb-6">Hesabını ve hizmetlerini buradan yönetebilirsin.</p>
+        <p class="text-gray-300 mb-8">Hesabını ve hizmetlerini buradan yönetebilirsin.</p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <!-- Kart 1: Ürünlerim -->
-            <a href="/urunlerim" class="block bg-brand-dark p-6 rounded-lg scale-95 hover:scale-100 duration-500   ">
-                <h2 class="text-xl font-bold text-red-500 mb-2">Hizmetlerim</h2>
-                <p class="text-white">Satın aldığın aktif hizmetleri ve ürünleri görüntüle.</p>
-            </a>
-
-            <!-- Kart 2: Destek Talepleri -->
-            <a href="/destek" class="block bg-brand-dark p-6 rounded-lg scale-95 hover:scale-100 duration-500 ">
-                <h2 class="text-xl font-bold text-red-500 mb-2">Destek Talepleri</h2>
-                <p class="text-white">Yeni bir destek talebi oluştur veya mevcut taleplerini takip et.</p>
-            </a>
-
-            <!-- Kart 3: Faturalarım -->
-            <a href="/faturalarim" class="block bg-brand-dark p-6 rounded-lg scale-95 hover:scale-100 duration-500 ">
-                <h2 class="text-xl font-bold text-red-500 mb-2">Faturalarım</h2>
-                <p class="text-white">Geçmiş ödemelerini ve faturalarını incele.</p>
-            </a>
-
-            <!-- Kart 4: Kullanıcı Bilgileri -->
-            <a href="/hesabim" class="block bg-brand-dark p-6 rounded-lg scale-95 hover:scale-100 duration-500 ">
-                <h2 class="text-xl font-bold text-red-500 mb-2">Kullanıcı Bilgileri</h2>
-                <p class="text-white">Kişisel bilgilerini ve şifreni güncelle.</p>
-            </a>
-
-            <!-- Kart 5: Sepet -->
-            <a href="/sepet" class="block bg-brand-dark p-6 rounded-lg scale-95 hover:scale-100 duration-500 ">
-                <h2 class="text-xl font-bold text-red-500 mb-2">Sepetim</h2>
-                <p class="text-white">Alışveriş sepetindeki ürünleri görüntüle.</p>
-            </a>
-
-            <!-- Kart 6: Bakiye -->
-            <a href="/bakiye-ekle" class="block bg-brand-dark p-6 rounded-lg scale-95 hover:scale-100 duration-500 ">
-                <h2 class="text-xl font-bold text-red-500 mb-2">Bakiye Yükle</h2>
-                <p class="text-white">Hesabına bakiye ekle.</p>
-            </a>
-
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <% const cards=[ {href: '/urunlerim' , title: 'Hizmetlerim' ,
+                desc: 'Satın aldığın aktif hizmetleri ve ürünleri görüntüle.' }, {href: '/destek' ,
+                title: 'Destek Talepleri' , desc: 'Yeni bir destek talebi oluştur veya mevcut taleplerini takip et.' },
+                {href: '/bildirimlerim' , title: 'Bildirimlerim' , desc: 'Hesabına gelen bildirimleri görüntüle.' },
+                {href: '/veri-tabanlarim' , title: 'Veri Tabanı Bilgilerim' , desc: 'Veri tabanlarımı yönet.' } ]; %>
+                <% cards.forEach(card=> { %>
+                    <a href="<%= card.href %>"
+                        class="block bg-brand-dark p-6 rounded-xl hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-xl border border-gray-700">
+                        <h2 class="text-xl font-bold text-brand-red mb-2">
+                            <%= card.title %>
+                        </h2>
+                        <p class="text-gray-300">
+                            <%= card.desc %>
+                        </p>
+                    </a>
+                    <% }); %>
         </div>
     </div>
 

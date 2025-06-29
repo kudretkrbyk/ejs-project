@@ -1,44 +1,52 @@
 <%- include('../../partials/header') %>
 
-<div class="bg-white p-8 rounded-lg shadow-lg">
-    <h1 class="text-3xl font-bold mb-6 text-gray-800 border-b pb-4">Hizmetlerim</h1>
+    <div class="bg-brand-dark-100 p-8 ">
+        <h1 class="text-3xl font-bold mb-6 text-white border-b border-gray-700 pb-4">Hizmetlerim</h1>
 
-    <% if (data.products && data.products.length > 0) { %>
-        <div class="overflow-x-auto">
-            <table class="min-w-full bg-white">
-                <thead class="bg-gray-800 text-white">
-                    <tr>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Ürün Adı</th>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Durum</th>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Bitiş Tarihi</th>
-                        <th class="text-left py-3 px-4 uppercase font-semibold text-sm">İşlemler</th>
-                    </tr>
-                </thead>
-                <tbody class="text-gray-700">
-                    <% data.products.forEach(product => { %>
+        <% if (data.products && data.products.length> 0) { %>
+            <div class="overflow-x-auto rounded-xl shadow-lg">
+                <table class="min-w-full divide-y divide-gray-700">
+                    <thead class="bg-brand-dark">
                         <tr>
-                            <td class="text-left py-3 px-4"><%= product.name %></td>
-                            <td class="text-left py-3 px-4"><span class="bg-green-200 text-green-700 py-1 px-3 rounded-full text-xs">Aktif</span></td>
-                            <td class="text-left py-3 px-4">30.12.2024</td>
-                            <td class="text-left py-3 px-4">
-                                <a href="/urun-detay/<%= product.id %>" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded text-xs">
-                                    Yönet
-                                </a>
-                            </td>
+                            <th class="text-left py-4 px-6 uppercase font-semibold text-sm text-gray-300">Ürün Adı</th>
+                            <th class="text-left py-4 px-6 uppercase font-semibold text-sm text-gray-300">Durum</th>
+                            <th class="text-left py-4 px-6 uppercase font-semibold text-sm text-gray-300">Bitiş Tarihi
+                            </th>
+                            <th class="text-left py-4 px-6 uppercase font-semibold text-sm text-gray-300">İşlemler</th>
                         </tr>
-                    <% }); %>
-                </tbody>
-            </table>
-        </div>
-    <% } else { %>
-        <div class="text-center py-12">
-            <p class="text-gray-600 text-lg mb-4">Henüz satın alınmış bir hizmetiniz bulunmuyor.</p>
-            <a href="/urunler" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition-colors">
-                Ürünlerimizi İnceleyin
-            </a>
-        </div>
-    <% } %>
+                    </thead>
+                    <tbody class="divide-y divide-gray-700">
+                        <% data.products.forEach(product=> { %>
+                            <tr class="hover:bg-gray-800 transition">
+                                <td class="py-4 px-6 text-white font-medium">
+                                    <%= product.name %>
+                                </td>
+                                <td class="py-4 px-6">
+                                    <span
+                                        class="bg-green-500 bg-opacity-20 text-green-400 py-1 px-3 rounded-full text-xs font-semibold">Aktif</span>
+                                </td>
+                                <td class="py-4 px-6 text-gray-300">30.12.2024</td>
+                                <td class="py-4 px-6">
+                                    <a href="/urun-detay/<%= product.id %>"
+                                        class="bg-brand-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded text-xs transition-colors">
+                                        Yönet
+                                    </a>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <% } else { %>
+                <div class="text-center py-12">
+                    <p class="text-gray-400 text-lg mb-4">Henüz satın alınmış bir hizmetiniz bulunmuyor.</p>
+                    <a href="/urunler"
+                        class="bg-brand-red hover:bg-red-700 text-white font-bold py-3 px-6 rounded transition-colors">
+                        Ürünlerimizi İnceleyin
+                    </a>
+                </div>
+                <% } %>
 
-</div>
+    </div>
 
-<%- include('../../partials/footer') %> 
+    <%- include('../../partials/footer') %>
