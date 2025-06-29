@@ -28,7 +28,7 @@
                 <div class="flex items-center justify-center gap-8">
                     <nav class="hidden md:flex items-center space-x-6">
                         <a href="/cozumlerimiz" class="hover:text-brand-red transition-colors">Çözümlerimiz</a>
-                        <a href="/urunler" class="hover:text-brand-red transition-colors">Forum</a>
+                        <a href="/forum" class="hover:text-brand-red transition-colors">Forum</a>
                     </nav>
                     <a href="/" class="relative w-10 h-10 group">
                         <img src="/images/favicon.png" alt="DataBen Favicon"
@@ -58,7 +58,7 @@
             </div>
 
             <!-- Mobil Menü Butonu -->
-            <div class="md:hidden">
+            <div class="md:hidden relative z-50">
                 <button id="mobile-menu-button" class="text-white focus:outline-none">
                     <i class="fas fa-bars text-2xl w-10 "></i>
                 </button>
@@ -66,11 +66,12 @@
         </div>
 
         <!-- Mobil Menü -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark-100 border-t border-gray-700 shadow-xl">
+        <div id="mobile-menu"
+            class="fixed top-16 left-0 w-full h-[calc(100vh-4rem)] bg-brand-dark-100 transform -translate-y-full opacity-0 transition-all duration-300 ease-in-out md:hidden">
             <nav class="flex flex-col items-center py-6 space-y-5">
                 <a href="/cozumlerimiz"
                     class="text-gray-300 hover:text-brand-red transition-colors text-lg">Çözümlerimiz</a>
-                <a href="/urunler" class="text-gray-300 hover:text-brand-red transition-colors text-lg">Forum</a>
+                <a href="/forum" class="text-gray-300 hover:text-brand-red transition-colors text-lg">Forum</a>
                 <a href="/hakkimizda"
                     class="text-gray-300 hover:text-brand-red transition-colors text-lg">Hakkımızda</a>
                 <a href="/iletisim" class="text-gray-300 hover:text-brand-red transition-colors text-lg">İletişim</a>
@@ -108,11 +109,20 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                const mobileMenuButton = document.getElementById('mobile-menu-button');
-                const mobileMenu = document.getElementById('mobile-menu');
+                const button = document.getElementById('mobile-menu-button');
+                const menu = document.getElementById('mobile-menu');
+                let open = false;
 
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
+                button.addEventListener('click', () => {
+                    if (!open) {
+                        menu.classList.remove('-translate-y-full', 'opacity-0');
+                        menu.classList.add('translate-y-0', 'opacity-100');
+                        open = true;
+                    } else {
+                        menu.classList.remove('translate-y-0', 'opacity-100');
+                        menu.classList.add('-translate-y-full', 'opacity-0');
+                        open = false;
+                    }
                 });
             });
         </script>
