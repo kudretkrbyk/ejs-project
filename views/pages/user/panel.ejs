@@ -1,7 +1,11 @@
 <%- include('../../partials/header') %>
 
     <div class="bg-brand-dark-100 p-8 ">
-        <h1 class="text-3xl font-bold mb-2 text-white">Hoş Geldin, <%= user.firstName %>!</h1>
+        <h1 class="text-3xl font-bold mb-2 text-white">
+            <a href="/profilim" class="hover:text-brand-red transition-colors">
+                Hoş Geldin, <%= user.firstName %>!
+            </a>
+        </h1>
         <p class="text-gray-300 mb-8">Hesabını ve hizmetlerini buradan yönetebilirsin.</p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

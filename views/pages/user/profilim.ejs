@@ -1,0 +1,57 @@
+<%- include('../../partials/header') %>
+
+    <div class="min-h-screen w-full  gap-10 bg-brand-dark-100 p-6">
+        <div class="w-full  bg-brand-dark rounded-2xl shadow-2xl p-10 flex flex-col md:flex-row gap-8">
+            <!-- Profil Bilgileri -->
+            <div class="flex-1 space-y-6">
+                <h2 class="text-2xl font-bold text-brand-red border-b border-gray-700 pb-4">Kullanıcı Bilgileri</h2>
+                <ul class="space-y-4 text-gray-300 text-lg">
+                    <li><strong>Ad Soyad:</strong>
+                        <%= user.KullaniciFullName %>
+                    </li>
+                    <li><strong>Email:</strong>
+                        <%= user.KullaniciEmail %>
+                    </li>
+                    <li><strong>Telefon:</strong>
+                        <%= user.KullaniciPhone %>
+                    </li>
+                    <li><strong>Adres:</strong>
+                        <%= user.KullaniciAdress %>
+                    </li>
+                    <li><strong>Yetki:</strong>
+                        <%= user.KullaniciRank %>
+                    </li>
+                    <li><strong>Bakiye:</strong>
+                        <%= user.KullaniciBalance %> ₺
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Aksiyonlar -->
+            <div class="flex-1 space-y-6">
+                <h2 class="text-2xl font-bold text-brand-red border-b border-gray-700 pb-4">Hızlı Erişim</h2>
+                <div class="flex flex-col gap-4">
+                    <a href="/ayarlar"
+                        class="bg-gray-800 hover:bg-gray-700 text-white py-4 px-6 rounded-lg text-center transition duration-300 shadow-md hover:shadow-xl">Ayarlar</a>
+                    <a href="/bildirimlerim"
+                        class="bg-gray-800 hover:bg-gray-700 text-white py-4 px-6 rounded-lg text-center transition duration-300 shadow-md hover:shadow-xl">Bildirimlerim</a>
+                    <a href="/destek"
+                        class="bg-gray-800 hover:bg-gray-700 text-white py-4 px-6 rounded-lg text-center transition duration-300 shadow-md hover:shadow-xl">Destek
+                        Talepleri</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Düzenleme Butonu -->
+        <!-- <div class="absolute bottom-10 text-center">
+            <a href="/profil-duzenle"
+                class="btn btn-primary group bg-brand-red text-white font-bold py-3 px-8 text-lg shadow-lg hover:bg-red-700 transition relative overflow-hidden inline-block">
+                <span class="bg-overlay"></span>
+                <span class="border-anim top"></span><span class="border-anim bottom"></span><span
+                    class="border-anim left"></span><span class="border-anim right"></span>
+                <span class="text-content">Profili Düzenle</span>
+            </a>
+        </div> -->
+    </div>
+
+    <%- include('../../partials/footer') %>

@@ -394,6 +394,24 @@ app.get("/iletisim", (req, res) => {
   const data = { pageTitle: "Hakkımızda" };
   res.render("pages/public/iletisim", data);
 });
+// Profil Sayfası Rotası
+app.get("/profilim", isAuthenticated, (req, res) => {
+  const userProfile = {
+    id: req.session.user.id,
+    fullName:
+      req.session.user.firstName + " " + (req.session.user.lastName || "Soyad"),
+    email: req.session.user.email,
+    phone: "+90 555 123 45 67",
+    address: "İzmit / Kocaeli",
+    rank: "Standart Üye",
+    balance: "250 TL",
+  };
+  const data = {
+    pageTitle: "Profilim",
+    user: userProfile,
+  };
+  res.render("pages/user/profilim", { data });
+});
 
 app.listen(port, () => {
   console.log(`Sunucu http://localhost:${port} adresinde çalışıyor`);

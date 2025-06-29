@@ -785,6 +785,10 @@ html {
   right: 0px;
 }
 
+.bottom-10 {
+  bottom: 2.5rem;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -1114,6 +1118,10 @@ html {
   max-width: 500px;
 }
 
+.max-w-5xl {
+  max-width: 64rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1250,6 +1258,10 @@ html {
   gap: 2.5rem;
 }
 
+.gap-5 {
+  gap: 1.25rem;
+}
+
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
@@ -1374,6 +1386,10 @@ html {
 
 .rounded-xl {
   border-radius: 0.75rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
 .border {
@@ -2458,6 +2474,12 @@ html {
 
   .md\:items-start {
     align-items: flex-start;
+  }
+
+  .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2rem * var(--tw-space-x-reverse));
+    margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:p-12 {
