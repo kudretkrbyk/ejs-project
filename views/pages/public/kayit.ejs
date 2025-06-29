@@ -1,59 +1,69 @@
 <%- include('../../partials/header') %>
 
-    <!-- Kayıt Ol Sayfası: Modern ve Marka Uyumlu Tasarım -->
     <div class="relative w-full min-h-screen flex items-center justify-center animated-gradient">
-        <!-- Arka plan overlay -->
         <div class="absolute inset-0 bg-black opacity-30 z-0"></div>
-        <div class="container mx-auto px-6 md:px-0 flex justify-center items-center z-10">
-            <div class="bg-brand-dark bg-opacity-90 w-full max-w-lg rounded-xl shadow-2xl p-8">
-                <!-- Kayıt Formu Başlığı -->
-                <h1 class="text-3xl font-extrabold text-center text-white mb-8">Yeni Hesap Oluştur</h1>
-                <!-- Kayıt Formu -->
-                <form action="/kayit" method="POST" class="space-y-6">
-                    <!-- Ad ve Soyad Alanları -->
-                    <div class="flex flex-wrap -mx-2">
-                        <div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
-                            <label for="first-name" class="block text-gray-200 text-sm font-bold mb-2">Ad</label>
-                            <input name="firstName" id="first-name" type="text" placeholder="Adınız" required
-                                class="w-full py-3 px-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-red transition" />
-                        </div>
-                        <div class="w-full md:w-1/2 px-2">
-                            <label for="last-name" class="block text-gray-200 text-sm font-bold mb-2">Soyad</label>
-                            <input name="lastName" id="last-name" type="text" placeholder="Soyadınız" required
-                                class="w-full py-3 px-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-red transition" />
-                        </div>
+        <div class="container mx-auto px-4 md:px-6 flex justify-center items-center z-10">
+            <div
+                class="bg-brand-dark bg-opacity-90 w-full max-w-2xl rounded-xl shadow-2xl p-6 md:p-8 flex flex-col gap-6">
+                <h1 class="text-3xl font-extrabold text-center text-white">Yeni Hesap Oluştur</h1>
+                <form action="/kayit" method="POST" class="flex flex-wrap gap-4">
+                    <div class="flex-1 min-w-[220px]">
+                        <label class="block text-gray-200 text-sm font-bold mb-2">Ad Soyad</label>
+                        <input name="userName" type="text" required placeholder="Ad Soyad"
+                            class="w-full py-3 px-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-brand-red transition" />
                     </div>
-                    <!-- E-posta Alanı -->
-                    <div>
-                        <label for="email" class="block text-gray-200 text-sm font-bold mb-2">E-posta Adresi</label>
-                        <input name="email" id="email" type="email" placeholder="ornek@mail.com" required
-                            class="w-full py-3 px-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-red transition" />
+                    <div class="flex-1 min-w-[220px]">
+                        <label class="block text-gray-200 text-sm font-bold mb-2">Telefon</label>
+                        <input name="userPhone" type="tel" required placeholder="+90..."
+                            class="w-full py-3 px-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-brand-red transition" />
                     </div>
-                    <!-- Şifre Alanı -->
-                    <div>
-                        <label for="password" class="block text-gray-200 text-sm font-bold mb-2">Şifre</label>
-                        <input name="password" id="password" type="password" placeholder="******************" required
-                            class="w-full py-3 px-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-red transition" />
+                    <div class="w-full">
+                        <label class="block text-gray-200 text-sm font-bold mb-2">E-posta</label>
+                        <input name="userMail" type="email" required placeholder="ornek@mail.com"
+                            class="w-full py-3 px-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-brand-red transition" />
                     </div>
-                    <!-- Hata Mesajı Alanı (isteğe bağlı, sunucu tarafı için) -->
+                    <div class="w-full">
+                        <label class="block text-gray-200 text-sm font-bold mb-2">Şifre</label>
+                        <input name="userPassword" type="password" required placeholder="******************"
+                            class="w-full py-3 px-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-brand-red transition" />
+                    </div>
+                    <div class="w-full">
+                        <label class="block text-gray-200 text-sm font-bold mb-2">Adres</label>
+                        <input name="userAdress" type="text" placeholder="Adresiniz"
+                            class="w-full py-3 px-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-brand-red transition" />
+                    </div>
+                    <div class="flex-1 min-w-[220px]">
+                        <label class="block text-gray-200 text-sm font-bold mb-2">Şirket Adı</label>
+                        <input name="userCompactName" type="text" placeholder="Şirket Adı"
+                            class="w-full py-3 px-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-brand-red transition" />
+                    </div>
+                    <div class="flex-1 min-w-[220px]">
+                        <label class="block text-gray-200 text-sm font-bold mb-2">Şirket Telefon</label>
+                        <input name="userCompactPhone" type="text" placeholder="Şirket Telefon"
+                            class="w-full py-3 px-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-brand-red transition" />
+                    </div>
+                    <div class="w-full">
+                        <label class="block text-gray-200 text-sm font-bold mb-2">Şirket Adres</label>
+                        <input name="userCompactAdress" type="text" placeholder="Şirket Adres"
+                            class="w-full py-3 px-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:ring-2 focus:ring-brand-red transition" />
+                    </div>
                     <% if (typeof error !=='undefined' ) { %>
-                        <div class="text-red-500 text-sm text-center">
+                        <div class="w-full text-red-500 text-sm text-center">
                             <%= error %>
                         </div>
                         <% } %>
-                            <!-- Kayıt Ol Butonu -->
-                            <button type="submit"
-                                class="btn btn-primary group w-full font-bold py-3 px-4  shadow-lg  text-white text-lg relative overflow-hidden">
-                                <span class="bg-overlay"></span>
-                                <span class="border-anim top"></span><span class="border-anim bottom"></span><span
-                                    class="border-anim left"></span><span class="border-anim right"></span>
-                                <span class="text-content">Kayıt Ol</span>
-                            </button>
-                            <!-- Giriş Yap Linki -->
-                            <p class="text-center text-gray-300 text-sm mt-6">
-                                Zaten bir hesabın var mı? <a href="/giris"
-                                    class="font-bold text-brand-red hover:text-opacity-80">Giriş Yap</a>.
-                            </p>
+                            <div class="w-full">
+                                <button type="submit"
+                                    class="btn btn-primary group w-full font-bold py-3 text-lg relative overflow-hidden">
+                                    <span class="bg-overlay"></span>
+                                    <span class="border-anim top"></span><span class="border-anim bottom"></span><span
+                                        class="border-anim left"></span><span class="border-anim right"></span>
+                                    <span class="text-content">Kayıt Ol</span>
+                                </button>
+                                <p class="text-center text-gray-300 text-sm mt-6">Zaten bir hesabın var mı? <a
+                                        href="/giris" class="font-bold text-brand-red hover:text-opacity-80">Giriş
+                                        Yap</a>.</p>
+                            </div>
                 </form>
             </div>
         </div>
